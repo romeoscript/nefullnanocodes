@@ -1,0 +1,331 @@
+:root {
+  --dark-blue: #0b0f4e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.header {
+  height: 7vw;
+  padding: 0 3vw;
+  font-size: 0.8vw;
+  box-shadow: 1px 1px 10px 5px #a5a5a5;
+  text-transform: uppercase;
+  line-height: 1.8em;
+  display: flex;
+  align-items: center;
+  color: var(--dark-blue);
+}
+.header .logo {
+  width: 5vw;
+  height: 5vw;
+  margin: 1vw;
+}
+.header .right {
+  margin: 15px 15px 15px auto;
+  display: flex;
+  align-items: center;
+}
+.header .right .me {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin: 5px 0;
+  border-radius: 4.5vh;
+}
+.header .right .drop {
+  border-top: 0.5vw solid;
+  border-left: 0.5vw solid transparent;
+  border-right: 0.5vw solid transparent;
+  margin:5px;
+  transform-origin: top;
+  transition: all 0.15s ease-out;
+}
+
+.right .dropdown{
+  cursor:pointer;  
+  position:relative;
+}
+
+.dropdown .menu {
+  position:absolute;
+  width:11vw;
+  background:var(--dark-blue);
+  right:-0.5vw;
+  top:1vw;
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  gap:1vw;
+  color:white;
+  font-size: 1.3vw;
+  padding:2.3vw 0 1vw;
+  transition: all 25s ease-out;
+  text-transform: none;
+}
+.menu a:hover{
+  font-size:1.2em;
+}
+
+.section {
+  overflow: hidden;
+  display: flex;
+  border-bottom: 1px solid #777;
+  font-size: 1.2em;
+  color: #555;
+  height: 24vw;
+}
+
+.text {
+  padding-bottom: 25px;
+  display: flex;
+  flex: 1;
+  margin: 20px;
+  font-weight: 600;
+  align-items: center;
+  line-height: 2em;
+  font-size: 1.6vw;
+}
+.text p {
+  margin-left: 5vw;
+}
+.text span {
+  color: var(--dark-blue);
+  font-size: 1.5em;
+  font-weight: 400;
+}
+.section h3 {
+  font-size: 1.9vw;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.section h3::before {
+  content: "Your ";
+  color: #999;
+}
+.section h5 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5vw;
+  margin-left: -1vw;
+  font-size: 1.4vw;
+  color: #777;
+  font-weight: 500;
+}
+.section h4 {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000;
+  font-size: 1.4vw;
+}
+.section h5::before {
+  content: "";
+  width: 1vw;
+  font-size: 1vw;
+  height: 1vw;
+  line-height: 1vw;
+  background-color: var(--col);
+  margin: 0 2vw;
+}
+.activity {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.activity > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.activity .container {
+  display: flex;
+  align-items: center;
+  padding-top: 3vw;
+}
+.doughnut {
+  background: conic-gradient(
+    #ffffff 1deg,
+    #5a9ad7 1deg,
+    #5a9ad7 209deg,
+    #ffffff 210deg,
+    #ef7e32 211deg,
+    #ef7e32 299deg,
+    #ffffff 300deg,
+    #a6a6a6 301deg,
+    #a6a6a6 329deg,
+    #ffffff 330deg,
+    #ffbf00 331deg,
+    #ffbf00 358deg,
+    #ffffff 360deg
+  );
+  border-radius: 100%;
+  height: 14vw;
+  width: 14vw;
+  position: relative;
+  margin: 2vw;
+}
+.doughnut > div {
+  content: "Total";
+  height: 11vw;
+  width: 11vw;
+  background: white;
+  border-radius: 100%;
+  position: absolute;
+  left: 1.5vw;
+  top: 1.5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4vw;
+}
+.doughnut > div p:nth-of-type(2) {
+  font-weight: 500;
+  color: var(--dark-blue);
+  font-size: 1.9vw;
+}
+.progress {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.progress section {
+  margin: 0 1.5vw;
+}
+.progress .container {
+  width: 26vw;
+  display: flex;
+  flex-direction: column;
+  height: 4vw;
+}
+.progress .container > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 1vw 1vw;
+  height: 1vw;
+}
+.progress progress {
+  width: 26vw;
+  height: 1vw;
+  color: red;
+  appearance: none;
+}
+.progress progress::-webkit-progress-inner-element {
+  height: 0.7vw;
+}
+.progress progress::-webkit-progress-bar {
+  appearance: none;
+  background-color: #ccc;
+}
+.progress progress::-webkit-progress-value {
+  appearance: none;
+  background-color: #040b9a;
+}
+
+.course {
+  display: flex;
+  height: 26vw;
+}
+.course h3 {
+  position: fixed;
+  font-size: 1.6vw;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 1vw;
+}
+.course .watched h3 {
+  position: unset;
+}
+.course h3:before {
+  content: "Most ";
+  color: #999;
+}
+.course .watched h3::before {
+  content: "Last ";
+}
+.recent {
+  width: 47.5vw;
+  padding: 0 2vw;
+  padding-left: 3.5vw;
+  margin: 2vw 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.recent .container {
+  height: 100%;
+  padding-top: 1.5vw;
+}
+.recent::-webkit-scrollbar {
+  width: 0.85vw;
+}
+.recent::-webkit-scrollbar-track {
+  background: #c4c4c4;
+  border-radius: 1vw;
+}
+.recent::-webkit-scrollbar-thumb {
+  width: 4vw;
+  background: #0f159c;
+  border-radius: 1vw;
+}
+.item {
+  width: 97.5%;
+  height: 6vw;
+  margin: 0.5vw;
+  display: flex;
+  margin-right: 1vw;
+  border-bottom: 1px solid #555;
+  position: relative;
+}
+.item video {
+  width: 25%;
+  height: 5vw;
+  margin: 1% 2%;
+  margin-left: auto;
+}
+.item .play {
+  z-index: 2;
+  position: absolute;
+  top: 35%;
+  right: 5vw;
+  border-top: 1vw solid transparent;
+  border-left: 1.5vw solid #ccc;
+  border-bottom: 1vw solid transparent;
+}
+
+.watched {
+  width: 50vw;
+  padding: 0 2vw;
+}
+.watched > div {
+  position: relative;
+}
+.watched .play {
+  z-index: 2;
+  position: absolute;
+  top: 35%;
+  left: 42.5%;
+  border-top: 2vw solid transparent;
+  border-left: 3vw solid #ccc;
+  border-bottom: 2vw solid transparent;
+}
