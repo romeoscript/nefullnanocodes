@@ -15,10 +15,26 @@ use App\Newsletter;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use function Ramsey\Uuid\v1;
+use Illuminate\Support\Facades\Auth;
 
 class Nanoadmins extends Controller
 {
     //
+    public function __construct()
+    {
+        // if (Auth::check()) {
+        //     // The user is logged in...
+        //     die('logged in');
+        // }
+        // else{
+        //     die('not logged in');
+        // }
+    }
+
+
+
+
+
     public function index()
     {
         return view('admin.index');
