@@ -258,7 +258,7 @@ code {
   position: unset;
 }
 .course h3:before {
-  content: "Most ";
+ 
   color: #999;
 }
 .course .watched h3::before {

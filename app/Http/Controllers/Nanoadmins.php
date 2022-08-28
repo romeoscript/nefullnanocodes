@@ -11,11 +11,14 @@ use App\Paidcourses;
 use App\Staff;
 use App\Students;
 use App\Mail\Sendnanomail;
-use App\Newsletter;
+use App\Courseoutline;
+use App\Coursereview;
+use App\Whatyouwilllearn;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\Auth;
+use Webkul\Product\Helpers\Review;
 
 class Nanoadmins extends Controller
 {
@@ -932,7 +935,6 @@ class Nanoadmins extends Controller
             # code...
             $delit = $gal->delete();
 
-
             if ($delit) {
                 # code...
                 Alert::success("Post Deleted", " The post was deleted succesfully ");
@@ -948,4 +950,283 @@ class Nanoadmins extends Controller
             return back();
         }
     }
+
+    public function courseoutlinecreate(Request $req)
+    {
+        # code...
+        $courseid = $req->id;
+        $courseoutline = $req->courseoutline;
+        $description = $req->description;
+
+
+        $newcourseoutline= new Courseoutline();
+        $newcourseoutline->outline = $courseoutline;
+        $newcourseoutline->description = $description;
+        $newcourseoutline->courseid = $courseid;
+
+        $newcourseoutline->courseid = $courseid;
+        if ($newcourseoutline->save()) {
+            # code...
+            Alert::success("Success", " the course outline was added");
+            return back();
+        } else {
+            # code...
+            Alert::error("Error adding the course outline", " the course outline was not added");
+            return back();
+        }
+    }
+
+
+    public function courseoutlineview(Request $req)
+    {
+        # code...
+        $allcourseoutline = Courseoutline::where('courseid', $req->id)->get();
+        $data = [];
+        $data['courseoutline']=$allcourseoutline;
+        $data['cid']=$req->id;
+        return view('admin.courseoutlineview', $data);
+
+
+    }
+
+    public function courseoutlineupdate(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $courseoutline = $req->courseoutline;
+        $description = $req->description;
+
+
+        $co = Courseoutline::where('id', $id)->first();
+        if ($co !== null) {
+            # code...
+            $co->outline = $courseoutline;
+            $co->description = $description;
+
+            $saveit = $co->save();
+            if ($saveit) {
+                # code...
+                Alert::success("course outline updated", " The course outline was updated succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course outline update request failed", " The course outline was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course outline update request failed", " The course outline was not found in the record!!");
+            return back();
+        }
+    }
+
+    public function courseoutlinedelete(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $co = Courseoutline::where('id', $id)->first();
+        if ($co !== null) {
+            # code...
+            $delit = $co->delete();
+
+            if ($delit) {
+                # code...
+                Alert::success("course outline Deleted", " The course outline was deleted succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course outline Request deletion failed", " The course outline was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course outline Request deletion failed", " The course outline was not found in the record!!");
+            return back();
+        }
+    }
+
+
+
+    public function reviewadd(Request $req)
+    {
+        # code...
+        $courseid = $req->id;
+        $review = $req->review;
+        $name = $req->name;
+        $star = $req->star;
+        $pic = $req->pic;
+
+        $newreview= new Coursereview();
+        $newreview->review = $review;
+        $newreview->courseid = $courseid;
+        $newreview->name = $name;
+        $newreview->star = $star;
+        $newreview->pic = 'admin';
+        if ($newreview->save()) {
+            # code...
+            Alert::success("Success", " the course review was added");
+            return back();
+        } else {
+            # code...
+            Alert::error("Error adding the course review", " the course review was not added");
+            return back();
+        }
+    }
+
+
+    public function coursereviewview(Request $req)
+    {
+        # code...
+        $allcoursereview = Coursereview::where('courseid', $req->courseid)->get();
+        $data = [];
+        $data['coursereview']= $allcoursereview;
+        $data['courseid']= $req->courseid;
+
+        return view('admin.coursereviewview', $data);
+
+    }
+
+    public function coursereviewdelete(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $cr = Coursereview::where('id', $id)->first();
+        if ($cr !== null) {
+            # code...
+            $delit = $cr->delete();
+
+            if ($delit) {
+                # code...
+                Alert::success("course review Deleted", " The course review was deleted succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course review Request deletion failed", " The course review was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course review Request deletion failed", " The course review was not found in the record!!");
+            return back();
+        }
+    }
+
+    public function coursereviewapprove(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $ca = Coursereview::where('id', $id)->first();
+        if ($ca !== null) {
+            # code...
+            $ca->approved = 1;
+            $saveit = $ca->save();
+
+            if ($saveit) {
+                # code...
+                Alert::success("course review Approved", " The course review was approved succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course review failed to approve", " The course review was not approved succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course review Request deletion failed", " The course review was not found in the record!!");
+            return back();
+        }
+    }
+
+
+
+
+
+
+    public function whatyouwilllearncreate(Request $req)
+    {
+        # code...
+        $courseid = $req->id;
+        $youwilllearn = $req->youwilllearn;
+        $newyouwilllearn= new Whatyouwilllearn();
+        $newyouwilllearn->youwilllearn = $youwilllearn;
+        $newyouwilllearn->courseid = $courseid;
+        if ($newyouwilllearn->save()) {
+            # code...
+            Alert::success("Success", " the course What to learn iten was added");
+            return back();
+        } else {
+            # code...
+            Alert::error("Error adding the course learning item", " the course learn item was not added");
+            return back();
+        }
+    }
+
+
+    public function whatyouwilllearnview(Request $req)
+    {
+        # code...
+        $whatyouwilllearnview = Whatyouwilllearn::where('courseid', $req->id)->get();
+        $data['courselearn']= $whatyouwilllearnview;
+        $data['courseid']= $req->id;
+
+        return view('admin.coursewhatyouwilllearn',$data);
+
+    }
+
+    public function whatyouwilllearnupdate(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $youwilllearn = $req->youwilllearn;
+
+        $co = Whatyouwilllearn::where('id', $id)->first();
+        if ($co !== null) {
+            # code...
+            $co->youwilllearn = $youwilllearn;
+            $saveit = $co->save();
+            if ($saveit) {
+                # code...
+                Alert::success("course you willl learn updated", " The course youwilllearn was updated succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course learn update request failed", " The course learn was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course learn update request failed", " The course learn was not found in the record!!");
+            return back();
+        }
+    }
+
+    public function youwilllearndelete(Request $req)
+    {
+        # code...
+        $id = $req->id;
+        $co = Whatyouwilllearn::where('id', $id)->first();
+        if ($co !== null) {
+            # code...
+            $delit = $co->delete();
+
+            if ($delit) {
+                # code...
+                Alert::success("course Whatyouwilllearn Deleted", " The course Whatyouwilllearn was deleted succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course Whatyouwilllearn Request deletion failed", " The course Whatyouwilllearn was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course Whatyouwilllearn Request deletion failed", " The course Whatyouwilllearn was not found in the record!!");
+            return back();
+        }
+    }
+
+
+
+
+
 }
