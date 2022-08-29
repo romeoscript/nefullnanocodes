@@ -1,7 +1,8 @@
 @extends('visitorslayout.layout')
+@include('csslayout.aboutcss')
+@include('csslayout.aboutcss')
 @section('body')
-
-
+@include('csslayout.navbar')
 <section class="buyflex">
     <div class="buyflex1">
    <section class="buytext">
@@ -36,5 +37,7 @@
         <button>sell now!</button>
     </div>
   </section>
-
+<script src="{{asset('assets/js/about.js')}}"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="{{asset("assets/js/swiper-bundle.js")}}"></script>
   @endsection

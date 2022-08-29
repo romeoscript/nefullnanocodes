@@ -1,7 +1,8 @@
 @extends('visitorslayout.layout')
+@include('csslayout.aboutcss')
+@include('csslayout.aboutcss')
 @section('body')
-
-
+@include('csslayout.navbar')
 <section class="buyflex qr-flex">
     <main class="sell-form"  style="position: relative;z-index: 11;">
         <p class="sec-p">send cryptocurrencies</p>
@@ -25,5 +26,7 @@
   </section>
 
 
-
+  <script src="{{asset('assets/js/about.js')}}"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="{{asset("assets/js/swiper-bundle.js")}}"></script>
 @endsection
