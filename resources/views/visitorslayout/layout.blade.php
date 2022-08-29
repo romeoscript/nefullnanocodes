@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <link rel="stylesheet" href="{{asset('assets/css/index.css')}}" />
+    {{-- <link rel="stylesheet" href="{{asset('assets/css/index.css')}}" /> --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="{{asset('assets/css/navbar.css')}}">
     <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/css/about.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
@@ -30,60 +29,6 @@
   </head>
 
   <body>
-
-      <header>
-        <video class="videoscript" style="position: absolute; top:14%; left:0; right:0; width:100%; opacity: 0.4;" src="{{asset('assets/final advert video.mp4')}}" autoplay muted loop></video>
-        <nav class="navbar">
-          <div class="content">
-            <div class="logo" style="display: flex; justify-content:flex-start;align-items: center;">
-              <img
-              src="{{asset('assets/images/nanotech.png')}}"
-              alt="logo"
-              width="60"
-              height="60"
-              class="logo"
-            />
-            <div>
-              <h1 style="margin: 0; text-align:left; font-size: 16px;" >Nanocodes</h1>
-              <h2 style="margin: 0; text-align:left; font-size: 16px">Programming</h2>
-            </div>
-            </div>
-            <ul class="menu-list">
-              <div class="icon cancel-btn">
-                <i class="fa fa-times"></i>
-              </div>
-              <li><a href="{{route('index')}}">GET STARTED</a></li>
-                 <li><a href="{{route('shop.home.index')}}">SHOP ONLINE</a></li>
-                 <li><a href="#mine">SERVICES</a>
-                 </li>
-                 <li id="showcase"><a href="#">LEARN ONLINE</a>
-                  <ul class="enable">
-                    <li><a href="{{route('customer.checkout.login')}}">LOGIN</a></li>
-                    <li><a href="{{route('customer.register.index')}}">SIGN UP</a></li>
-                </ul>
-              </li>
-
-                 <li><a href="{{route('about')}}">ABOUT US</a></li>
-                 <li><a href="{{route('coinsell')}}">BUY/SELL CRYPTO</a></li>
-
-
-                 </li>
-            </ul>
-            <div class="icon menu-btn">
-              <i class="fa fa-bars"></i>
-            </div>
-          </div>
-        </nav>
-
-        <div class="emtpy"></div>
-
-
-
-
-
-
-
-
 
       @yield('body')
 
@@ -203,5 +148,7 @@
     </script>
 
     <script src="{{asset('assets/js/index.js')}}"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
   </body>
 </html>
