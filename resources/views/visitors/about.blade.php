@@ -1,8 +1,8 @@
 @extends('visitorslayout.layout')
+@include('csslayout.aboutcss')
+@include('csslayout.aboutcss')
 @section('body')
-
-
-
+@include('csslayout.navbar')
 <main class="container">
     <section class="sec1">
         <h3>Who We Are</h3>
@@ -201,6 +201,8 @@
       </div>
 
   </section>
-
-
+ 
+  <script src="{{asset('assets/js/about.js')}}"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="{{asset("assets/js/swiper-bundle.js")}}"></script>
 @endsection

@@ -1,13 +1,8 @@
 @extends('visitorslayout.layout')
+@include('csslayout.aboutcss')
+@include('csslayout.aboutcss')
 @section('body')
-
-
-
-
-
-
-
-
+@include('csslayout.navbar')
 <section class="gallery__head">
     <img src="./assets/images/gbg.png" alt="">
  </section>
@@ -243,5 +238,7 @@
 </div>
 <div class="nothing" style="height:80px;">
 
-
+<script src="{{asset('assets/js/about.js')}}"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="{{asset("assets/js/swiper-bundle.js")}}"></script>
 @endsection
