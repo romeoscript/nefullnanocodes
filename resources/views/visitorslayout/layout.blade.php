@@ -25,7 +25,11 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap"
       rel="stylesheet"
     />
-
+<style>
+  body{
+background: url({{asset('assets/images/World_map.png')}}); 
+  }
+</style>
   </head>
 
   <body>

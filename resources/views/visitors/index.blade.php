@@ -1,4 +1,5 @@
 @extends('visitorslayout.layout')
+@include('csslayout.indexcss')
 @section('body')
 <header>
   <video class="videoscript" style="position: absolute; top:14%; left:0; right:0; width:100%; opacity: 0.4;" src="./assets/final advert video.mp4" autoplay muted loop></video>
