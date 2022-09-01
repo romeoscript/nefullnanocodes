@@ -1,7 +1,9 @@
 
 <nav class="navbar">
     <div class="content">
+     
       <div class="logo" style="display: flex; justify-content:flex-start;align-items: center;">
+         <a href="/">
         <img
         src="{{asset('assets/images/nanotech.png')}}"
         alt="logo"
@@ -9,16 +11,17 @@
         height="60"
         class="logo"
       />
+    </a>
       <div>
-        <h1 style="margin: 0; text-align:left; font-size: 16px;" >Nanocodes</h1>
-        <h2 style="margin: 0; text-align:left; font-size: 16px">Programming</h2>
+        <a href="/" style="text-decoration: unset;"> <h1 style="margin: 0; text-align:left; font-size: 16px;" >Nanocodes</h1></a>
+          <a href="/" style="text-decoration: unset;">  <h2 style="margin: 0; text-align:left; font-size: 16px">Programming</h2></a>
       </div>
       </div>
       <ul class="menu-list">
         <div class="icon cancel-btn">
           <i class="fa fa-times"></i>
         </div>
-        <li><a href="{{route('index')}}">GET STARTED</a></li>
+        
            <li><a href="{{route('shop.home.index')}}">SHOP ONLINE</a></li>
            <li><a href="#mine">SERVICES</a>
            </li>
@@ -32,7 +35,7 @@
            <li><a href="{{route('about')}}">ABOUT US</a></li>
            <li><a href="{{route('coinsell')}}">BUY/SELL CRYPTO</a></li>
 
-
+           <li><a href="{{route('contact')}}">CONTACT  U</a></li>
            </li>
            
       </ul>
