@@ -15,6 +15,7 @@ use App\Courseoutline;
 use App\Coursereview;
 use App\Whatyouwilllearn;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Ourservice;
 
 use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\Auth;
@@ -266,6 +267,32 @@ class Nanoadmins extends Controller
         }
         $fileName = time() . $course . '.' . $save_file_extension;
         $path = $req->file('courseouline')->storeAS("course", $fileName);
+
+
+
+
+
+
+
+
+        $file_extension = $req->file('courseimage')->getClientOriginalExtension();
+        if ($file_extension == "jpg") {
+            # code...
+            $save_file_extension = "jpg";
+        } elseif ($file_extension == "jpeg") {
+            # code...
+            $save_file_extension = "jpeg";
+        } elseif ($file_extension == "pdf") {
+            # code...
+            $save_file_extension = "pdf";
+        } elseif ($file_extension == "doc") {
+            # code...
+            $save_file_extension = "doc";
+        } else {
+            $save_file_extension = "png";
+        }
+        $coursefileName = time() . $course . '.' . $save_file_extension;
+        $path = $req->file('courseimage')->storeAS("courseimage", $coursefileName);
         /* Store $fileName name in DATABASE from HERE */
         $addcourse->course = $course;
         $addcourse->price = $price;
@@ -273,7 +300,9 @@ class Nanoadmins extends Controller
         $addcourse->tutor = $tutor;
         $addcourse->maxduation = $maxduation;
         $addcourse->timetable = $timetable;
-        $addcourse->courseouline = $path;
+        $addcourse->courseouline = $fileName;
+        $addcourse->courseimage = $coursefileName;
+
         $createcourse = $addcourse->save();
 
         if ($createcourse && $path) {
@@ -1226,7 +1255,123 @@ class Nanoadmins extends Controller
     }
 
 
+    public function ourservices (){
+
+        $allservices =  Ourservice::all();
+        $data = [];
+
+        $data['ourservices']= $allservices;
+
+        return view('admin.services', $data);
+
+}
 
 
 
+
+public function serviceadd (Request $req){
+# code...
+$service = $req->service;
+$servicedescription = $req->servicedescription;
+
+$file_extension = $req->file('serviceimage')->getClientOriginalExtension();
+if ($file_extension == "jpg") {
+    # code...
+    $save_file_extension = "jpg";
+} elseif ($file_extension == "jpeg") {
+    # code...
+    $save_file_extension = "jpeg";
+}  else {
+    $save_file_extension = "png";
+}
+$fileName = time() . $service . '.' . $save_file_extension;
+$path = $req->file('serviceimage')->storeAS("serviceimages", $fileName);
+/* Store $fileName name in DATABASE from HERE */
+
+$allservices = new  Ourservice();
+$allservices->service = $service;
+$allservices->servicedescription = $servicedescription;
+$allservices->serviceimage = $fileName;
+
+if ($allservices->save()) {
+    # code...
+    Alert::success("Success", " the service item was added");
+    return back();
+} else {
+    # code...
+    Alert::error("Error adding the service item", " the service item was not added");
+    return back();
+}
+
+}
+
+public function serviceupdate (Request $req){
+$id = $req->id;
+$service = $req->service;
+$servicedescription = $req->servicedescription;
+
+$aservices = Ourservice::where('id', $id)->first();
+if ($aservices != null) {
+    # code...
+
+    $file_extension = $req->file('serviceimage')->getClientOriginalExtension();
+    if ($file_extension == "jpg") {
+        # code...
+        $save_file_extension = "jpg";
+    } elseif ($file_extension == "jpeg") {
+        # code...
+        $save_file_extension = "jpeg";
+    }  else {
+        $save_file_extension = "png";
+    }
+    $fileName = time() . $service . '.' . $save_file_extension;
+    $path = $req->file('serviceimage')->storeAS("serviceimages", $fileName);
+    /* Store $fileName name in DATABASE from HERE */
+
+    $aservices->service = $service;
+     $aservices->servicedescription = $servicedescription;
+    $aservices->serviceimage = $fileName;
+
+if ($aservices->save()) {
+    # code...
+    Alert::success("Success", " the service item was updated");
+    return back();
+} else {
+    # code...
+    Alert::error("Error adding the service item", " the service item was not updated");
+    return back();
+}
+}
+else {
+    # code...
+    Alert::error("Error adding the service item", " the service item was not found");
+    return back();
+}
+
+
+
+}
+public function ourservicesdelete (Request $req){
+
+    $id = $req->id;
+        $co = Ourservice::where('id', $id)->first();
+        if ($co !== null) {
+            # code...
+            $delit = $co->delete();
+
+            if ($delit) {
+                # code...
+                Alert::success("service Deleted", " The service was deleted succesfully ");
+                return back();
+            } else {
+                # code...
+                Alert::error("course service Request deletion failed", " The course service was not deleted succesfully !!!");
+                return back();
+            }
+        } else {
+            # code...
+            Alert::error("course service Request deletion failed", " The course service was not found in the record!!");
+            return back();
+        }
+}
 }

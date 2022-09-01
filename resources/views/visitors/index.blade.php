@@ -4,7 +4,7 @@
 <header>
   <video class="videoscript" style="position: absolute; top:14%; left:0; right:0; width:100%; opacity: 0.4;" src="./assets/final advert video.mp4" autoplay muted loop></video>
  @include('csslayout.navbar')
-  
+
   <div class="emtpy"></div>
   <!-- wrapper -->
 
@@ -38,11 +38,11 @@
     </div>
     <div class="main-innerbox">
       <select name="cars" id="crypto">
-        <option value="bitcoin">btx</option>
-        <option value="etherium">eth</option>
+        <option value="bitcoin">BTC</option>
+        <option value="etherium">ETH</option>
       </select>
       <input type="text" />
-      <input type="text" placeholder="COPY ADDRESS" />
+      <input type="text" placeholder="CONTACT US FOR CRYPTOCURRENCY TRANSACTIONS" />
       <button>sell</button>
     </div>
   </div>
@@ -99,28 +99,44 @@
     </p>
   </div>
 </div>
+
+<br><br><br><br>
+
+
+
 <div class="boxmode-mom" id="mine">
   <ul>
-    <li>what we do</li>
-    <li>what we teach</li>
+    <li>What We Do</li>
+    <li></li>
   </ul>
   <div class="service-boxmodel">
+    @if ($services != null)
+    @foreach ($services as $service )
+
+
     <div class="boxes">
-      <img
-        src="./assets/images/pexels-pixabay-267394.jpg"
-        alt=""
-        class="boximage"
-        data-aos="fade-down-right"
-      />
-      <h2>
-        get to be tutored on how to sell online from the absolute best,
-        also gain access to our top courses for free
-      </h2>
-      <p>
-        digital <br />
-        marketing
-      </p>
-    </div>
+        <img
+          src="{{asset('storage/serviceimages/'.$service->serviceimage)}}"
+          alt="{{$service->service}} Image"
+          class="boximage"
+          data-aos="fade-down-right"
+        />
+        <h2>
+          {{$service->service}}
+        </h2>
+        <p>
+         {{$service->servicedescription}}
+        </p>
+      </div>
+
+    @endforeach
+
+    @else
+    <b>NO service set or found</b>
+
+    @endif
+
+{{--
     <div class="boxes">
       <img
         src="./assets/images/ui.jpg  "
@@ -134,6 +150,7 @@
       </h2>
       <p>mobile <br />development</p>
     </div>
+
     <div class="boxes">
       <img
         src="./assets/images/dev.jpg"
@@ -217,9 +234,54 @@
         clients happy
       </h2>
       <p>HYBRID APP DESING <br />DEVELOPMENT</p>
-    </div>
+    </div> --}}
   </div>
 </div>
+
+
+
+
+
+<div class="boxmode-mom" id="mine">
+    <ul>
+
+      <li>What We Teach</li>
+    </ul>
+    <div class="service-boxmodel">
+        @if ($courses != null)
+    @foreach ($courses as $course )
+
+
+    <div class="boxes">
+        <img
+          src="{{asset('storage/course/'.$course->courseimage)}}"
+          alt="{{$course->course}} Image"
+          class="boximage"
+          data-aos="fade-down-right"
+        />
+        <h2>
+          {{$course->course}}
+        </h2>
+        <p>
+         {{$course->description}}
+        </p>
+      </div>
+
+    @endforeach
+
+    @else
+    <b>NO Course set or found</b>
+
+    @endif
+
+
+
+
+    </div>
+  </div>
+
+
+
 <div class="glass-mum">
   <div class="glassy" data-aos="zoom-out-up">
     <div class="first-count">

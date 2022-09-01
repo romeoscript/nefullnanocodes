@@ -23,14 +23,12 @@ Route::get('/cointransactions', [App\Http\Controllers\VisitorsController::class,
 Route::get('/gallery', [App\Http\Controllers\VisitorsController::class, 'gallery'])->name('gallery');
 Route::get('/coinqr', [App\Http\Controllers\VisitorsController::class, 'coinqr'])->name('coinqr');
 Route::get('/coinsell', [App\Http\Controllers\VisitorsController::class, 'coinsell'])->name('coinsell');
-
+Route::post('/visitorssubscribe', [App\Http\Controllers\VisitorsController::class, 'visitorssubscribe'])->name('visitorssubscribe');
 
 
 
 //admin routes
 Route::get('/nanoadmin', [App\Http\Controllers\Nanoadmins::class, 'index'])->name('nanoadmin');
-
-
 //courses
 Route::get('/coursesall', [App\Http\Controllers\Nanoadmins::class, 'coursesall'])->name('coursesall');
 Route::get('/coursesandstudents', [App\Http\Controllers\Nanoadmins::class, 'coursesandstudents'])->name('coursesandstudents');
@@ -55,6 +53,15 @@ Route::get('/whatyouwilllearnview/{id}', [App\Http\Controllers\Nanoadmins::class
 Route::post('/whatyouwilllearncreate', [App\Http\Controllers\Nanoadmins::class, 'whatyouwilllearncreate'])->name('whatyouwilllearncreate');
 Route::post('/whatyouwilllearnupdate}', [App\Http\Controllers\Nanoadmins::class, 'whatyouwilllearnupdate'])->name('whatyouwilllearnupdate');
 Route::get('/youwilllearndelete/{id}', [App\Http\Controllers\Nanoadmins::class, 'youwilllearndelete'])->name('youwilllearndelete');
+
+//our services
+Route::get('/ourservices', [App\Http\Controllers\Nanoadmins::class, 'ourservices'])->name('ourservices');
+
+Route::post('/serviceadd', [App\Http\Controllers\Nanoadmins::class, 'serviceadd'])->name('serviceadd');
+Route::post('/serviceupdate', [App\Http\Controllers\Nanoadmins::class, 'serviceupdate'])->name('serviceupdate');
+Route::get('/ourservicesdelete/{id}', [App\Http\Controllers\Nanoadmins::class, 'ourservicesdelete'])->name('ourservicesdelete');
+
+
 
 
 

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>{{$title}}</title>
 
     {{-- <link rel="stylesheet" href="{{asset('assets/css/index.css')}}" /> --}}
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -27,12 +27,13 @@
     />
 <style>
   body{
-background: url({{asset('assets/images/World_map.png')}}); 
+background: url({{asset('assets/images/World_map.png')}});
   }
 </style>
   </head>
 
   <body>
+    @include('sweetalert::alert')
 
       @yield('body')
 
@@ -115,13 +116,17 @@ background: url({{asset('assets/images/World_map.png')}});
               </address>
             </div>
             <div class="input">
+                <form action="{{route('visitorssubscribe')}}" method="post">
+                    @csrf
               <input
                 type="email"
-                name=""
+                name="email"
                 id=""
+                value=""
                 placeholder="Enter Email Address"
               />
               <button type="submit">Subscribe</button>
+            </form>
             </div>
           </div>
           <div class="icon-last">
@@ -153,6 +158,6 @@ background: url({{asset('assets/images/World_map.png')}});
 
     <script src="{{asset('assets/js/index.js')}}"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+
   </body>
 </html>

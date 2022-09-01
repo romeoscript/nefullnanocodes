@@ -24,6 +24,7 @@ return new class extends Migration
             $table->text('maxduation');
             $table->text('courseouline');
             $table->text('timetable');
+            $table->text('courseimage');
         });
     }
 

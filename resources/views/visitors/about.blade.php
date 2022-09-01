@@ -29,65 +29,36 @@
    <section class="about-table">
       <table>
         <caption>WHAT WE DO</caption>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
+        @if ($services != null)
+    @foreach ($services as $service )
+    <tr>
+        <td>{{$service->service}}</td>
+        <td>NEGOTIABLE</td>
+      </tr>
+    @endforeach
+
+    @else
+    <b>NO service set or found</b>
+
+    @endif
+
+
       </table>
       <table>
-        <caption>WHAT WE DO</caption>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
+        <caption>WHAT WE TEACH</caption>
+        @if ($courses != null)
+        @foreach ($courses as $course )
+        <tr>
+            <td>{{$course->course}}</td>
+            <td> &#8358;{{$course->price}} </td>
           </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
-          <tr>
-            <td>web design</td>
-            <td>#70,000</td>
-          </tr>
+        @endforeach
+
+        @else
+        <b>NO Course set or found</b>
+
+        @endif
+
       </table>
    </section>
    <!-- about-table-end -->
@@ -95,28 +66,35 @@
     <h2 style="color:#8f087f">THE TEAM</h2>
     <div class="slider-container swiper mySwiper">
       <div class="swiper-wrapper slider-content">
+
+
+        {{-- @if ($allstaff != null)
+
+        @foreach ($allstaff as $staff )
+
         <div class="swiper-slide slider-card">
-          <div class="card-content">
-            <div class="image">
-              <img src="./assets/images/ano.jpg" alt="">
-            </div>
-            <div class="rating">
-              <span class="name">Romeo</span>
-              <span class="testimony">Lorem ipsum dolor sit amet <br>Lorem ipsum dolor sit amet.</span>
+            <div class="card-content">
+              <div class="image">
+                <img src="{{asset('storage/profile/'.$staff->pic)}}" alt="">
+              </div>
+              <div class="rating">
+                <span class="name">{{$staff->name}}</span>
+                <span class="testimony">{{$staff->description}}</span>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide slider-card">
-          <div class="card-content">
-            <div class="image">
-              <img src="./assets/images/ano.jpg" alt="">
-            </div>
-            <div class="rating">
-              <span class="name">Romeo</span>
-              <span class="testimony">Lorem ipsum dolor sit amet <br>Lorem ipsum dolor sit amet.</span>
-            </div>
-          </div>
-        </div>
+
+        @endforeach
+
+        @else
+        <b>No staff set</b>
+
+        @endif
+ --}}
+
+
+
+
         <div class="swiper-slide slider-card">
           <div class="card-content">
             <div class="image">
@@ -201,7 +179,7 @@
       </div>
 
   </section>
- 
+
   <script src="{{asset('assets/js/about.js')}}"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="{{asset("assets/js/swiper-bundle.js")}}"></script>

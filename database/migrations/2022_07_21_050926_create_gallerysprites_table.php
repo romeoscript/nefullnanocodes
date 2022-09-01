@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('skill');
             $table->string('approved')->default(0);
+            $table->integer("studentid")->nullable();
         });
     }
 

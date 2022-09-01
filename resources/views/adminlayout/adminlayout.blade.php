@@ -194,6 +194,16 @@ background-color: #4285F4; }
 								{{-- <li class=""><a href="{{route('emails_send_bulk')}}">Send Bulk Mail</a></li> --}}
 							</ul>
 						</li>
+                        <li class="has_sub">
+							<a href="#" class="waves-effect subdrop "><i class="fas fa-code"></i>
+								<span> Services managemnt </span> <span class="pull-right"><i class="fa fa-window-minimize"
+										aria-hidden="true"></i></span></a>
+							<ul class="list-unstyled" style="display: block;">
+								<li class=""><a href="{{route('ourservices')}}">View Services</a></li>
+								{{-- <li class=""><a href="{{route('emails_send_bulk')}}">Send Bulk Mail</a></li> --}}
+							</ul>
+						</li>
+                        <li></li>
 						<li>
 							<a href="{{route('logout')}}" class="waves-effect"><i class="fa fa-power-off"
 									aria-hidden="true"></i><span> Logout </span></a>

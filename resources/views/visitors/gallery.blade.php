@@ -11,31 +11,42 @@
 <a href="#"><p>nanocodes</p></a>
 </div>
 <section class="gallery__grid">
-<main class="gallery__grid-imgholder">
-    <div class="gallery__grid_img">
-        <img src="./assets/images/Rectangle 93.png" alt="">
 
-        <div class="gallery__info">
-            <h3>flutter is getting better</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae magni ipsa quos quisquam ullam quia nemo consequuntur minus doloribus provident. </p>
-            <article  class="see" id="e1">see more</a>
+@if ($ourgallery != null)
+    @foreach ($ourgallery as $gallery )
+
+    <main class="gallery__grid-imgholder">
+        <div class="gallery__grid_img">
+            <img src="./assets/images/Rectangle 93.png" alt="">
+
+            <div class="gallery__info">
+                <h3>{{$gallery->pictitle}}</h3>
+                <p>{{$gallery->description}}</p>
+                <article  class="see" id="e1">see more</a>
+            </div>
+
         </div>
-
-    </div>
-    <div class="descriptive__info" id="e1">
-      <div style="display: flex;justify-content:space-between;margin:1px 10px 20px;"><p class="time">20:01</p> <p class="date">22 Aug 2021</p><i class="fa fa-times times2" id="e1" aria-hidden="true"></i></div>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque dicta voluptas non quam et, commodi repudiandae reiciendis cum voluptates perspiciatis iure veritatis exercitationem obcaecati, magni nemo, totam in porro! Neque!</p>
-        <div class="gallery__clearfix"></div>
-        <div class="gallery__profile">
-          <img src="./assets/images/rev1.png" alt="">
-          <div class="gallery__profile-info">
-            <h2>Ada Eze</h2>
-            <p>flutter student at nanocodes</p>
-            <a class="fa fa-instagram"> ada chukwu</a> <a href="#" class="fa fa-envelope">ada@gmail.com</a>
+        <div class="descriptive__info" id="e1">
+          <div style="display: flex;justify-content:space-between;margin:1px 10px 20px;"><p class="time">{{ Carbon\Carbon::parse($course->updated_at)->toTimeString() }}</p> <p class="date">{{ Carbon\Carbon::parse($course->updated_at)->diffForHumans() }}</p><i class="fa fa-times times2" id="e1" aria-hidden="true"></i></div>
+            <p>{{$gallery->description}}</p>
+            <div class="gallery__clearfix"></div>
+            <div class="gallery__profile">
+              <img src="{{storage/studentspic/$course->studentpassport}}" alt="">
+              <div class="gallery__profile-info">
+                <h2>{{$course->name}}</h2>
+                <p> student at nanocodes</p>
+                <a class="fa fa-instagram"> <a href="https://www.instagram.com/nano_codes" target="_blank" rel="noopener noreferrer">nano_codes</a></a> <a href="mailto:{{$course->email}}" class="fa fa-envelope">{{$course->email}}</a>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-</main>
+    </main>
+
+    @endforeach
+@else
+    <b>No content yet in gallery</b>
+@endif
+
+
 
 <main class="gallery__grid-imgholder">
     <div class="gallery__grid_img">

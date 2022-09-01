@@ -20,21 +20,23 @@
         </div>
         <li><a href="{{route('index')}}">GET STARTED</a></li>
            <li><a href="{{route('shop.home.index')}}">SHOP ONLINE</a></li>
-           <li><a href="#mine">SERVICES</a>
+           <li><a href="{{route('index')}}#mine">SERVICES</a>
            </li>
            <li id="showcase"><a href="#">LEARN ONLINE</a>
             <ul class="enable">
-              <li><a href="{{route('customer.checkout.login')}}">LOGIN</a></li>
+              <li><a href="{{route('customer.session.index')}}">LOGIN</a></li>
               <li><a href="{{route('customer.register.index')}}">SIGN UP</a></li>
           </ul>
         </li>
 
            <li><a href="{{route('about')}}">ABOUT US</a></li>
+           <li><a href="{{route('gallery')}}">Gallery</a></li>
+
            <li><a href="{{route('coinsell')}}">BUY/SELL CRYPTO</a></li>
 
 
            </li>
-           
+
       </ul>
       <div class="icon menu-btn">
         <i class="fa fa-bars"></i>

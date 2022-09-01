@@ -18,6 +18,7 @@
 
                                 <form class="row g-3" action="{{route('post_create_course')}}" method="POST" enctype="multipart/form-data">
                                     @csrf
+
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Course</label>
@@ -25,6 +26,16 @@
                                                 placeholder="course name"  value="">
                                         </div>
                                     </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label>Course</label>
+                                            <input type="file" required class="form-control" name="courseimage"
+                                                placeholder="course Image"  value="">
+                                        </div>
+                                    </div>
+
+
                                     <div class="col-md-6">
                                         <label for="inputEmail4" class="form-label">Price</label>
                                         <input type="text" required name="price" value="" class="form-control"
