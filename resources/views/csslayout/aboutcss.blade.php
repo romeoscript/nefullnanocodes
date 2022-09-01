@@ -1030,6 +1030,28 @@ visibility: hidden;
   content: "\f0da";
 }
 /* gallery__page__end */
+/* contact page */
+.contact__client{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin-top:90px;
+  
+}
+.contact__client h1{
+ font-size: 40px;
+ text-transform:capitalize;
+}
+.contact__client div{
+  flex-basis: 60%;
+  border:1px solid green;
+  position:relative;
+}
+.contact__client div img{
+  width:90%;
+}
+/* contact end */
 footer {
   background-color: rgb(15, 19, 118);
 }
