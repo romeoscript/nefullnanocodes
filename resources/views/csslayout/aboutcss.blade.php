@@ -1037,6 +1037,7 @@ visibility: hidden;
   align-items: center;
   padding: 10px;
   margin-top:90px;
+  height: 70vh;
   
 }
 .contact__client h1{
@@ -1045,8 +1046,49 @@ visibility: hidden;
 }
 .contact__client div{
   flex-basis: 60%;
-  border:1px solid green;
+ 
   position:relative;
+}
+.contact__client div aside{
+  box-shadow: 0px 4px 11px -1px #00000021;
+border-radius: 10px;
+height: auto;
+width: 150px;
+position: absolute;
+padding: 5px;
+background: white;
+cursor: pointer;
+animation: dancing 1.2s linear infinite;
+}
+@keyframes dancing{
+  0%{
+    transform: scale(1)
+  }
+  50%{
+    transform: scale(1.1)
+  }
+  100%{
+    transform: scale(1)
+  }
+}
+.contact__client .aside_1{
+  
+  top: 45%;
+  right: 10%;
+}
+.contact__client .aside_2{
+  
+  top: 60%;
+  right: 15%;
+}
+.contact__client .aside_3{
+ 
+  top: 75%;
+  right: 10%;
+}
+.contact__client div aside img{
+  width: 30px;
+  height: 30px;
 }
 .contact__client div img{
   width:90%;
@@ -1348,6 +1390,26 @@ footer .icon-last {
   }
 }
 @media (max-width: 480px) {
+  .contact__client{
+  display: block;
+  height: auto;
+  
+}
+.contact__client .aside_1{
+  
+  top: 10%;
+  right: 10%;
+}
+.contact__client .aside_2{
+  
+  top: 40%;
+  right: 15%;
+}
+.contact__client .aside_3{
+ 
+  top: 70%;
+  right: 10%;
+}
   .gallery__grid-imgholder{
   /* border: 2px solid blue; */
   width: 90%;
