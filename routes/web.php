@@ -23,6 +23,7 @@ Route::get('/cointransactions', [App\Http\Controllers\VisitorsController::class,
 Route::get('/gallery', [App\Http\Controllers\VisitorsController::class, 'gallery'])->name('gallery');
 Route::get('/coinqr', [App\Http\Controllers\VisitorsController::class, 'coinqr'])->name('coinqr');
 Route::get('/coinsell', [App\Http\Controllers\VisitorsController::class, 'coinsell'])->name('coinsell');
+Route::get('/contact', [App\Http\Controllers\VisitorsController::class, 'contact'])->name('contact');
 
 
 

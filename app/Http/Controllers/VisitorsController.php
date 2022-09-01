@@ -19,6 +19,12 @@ class VisitorsController extends Controller
         return view('visitors.about' ,$data);
     }
 
+    public function contact (){
+        $data =[];
+        $data['title']="contact Nanocodes Programming Limited";
+        return view('visitors.contact' ,$data);
+    }
+
 
     public function coinbuy (){
         $data =[];
