@@ -1085,6 +1085,26 @@ class Nanoadmins extends Controller
         $star = $req->star;
         $pic = $req->pic;
 
+        $file_extension = $req->file('pic')->getClientOriginalExtension();
+        if ($file_extension == "jpg") {
+            # code...
+            $save_file_extension = "jpg";
+        } elseif ($file_extension == "jpeg") {
+            # code...
+            $save_file_extension = "jpeg";
+        } elseif ($file_extension == "pdf") {
+            # code...
+            $save_file_extension = "pdf";
+        } elseif ($file_extension == "doc") {
+            # code...
+            $save_file_extension = "doc";
+        } else {
+            $save_file_extension = "png";
+        }
+        $fileName = time() . $name . '.' . $save_file_extension;
+        $path = $req->file('pic')->storeAS("reviewpic", $fileName);
+        /* Store $fileName name in DATABASE from HERE */
+
         $newreview= new Coursereview();
         $newreview->review = $review;
         $newreview->courseid = $courseid;

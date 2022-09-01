@@ -23,7 +23,14 @@ Route::get('/cointransactions', [App\Http\Controllers\VisitorsController::class,
 Route::get('/gallery', [App\Http\Controllers\VisitorsController::class, 'gallery'])->name('gallery');
 Route::get('/coinqr', [App\Http\Controllers\VisitorsController::class, 'coinqr'])->name('coinqr');
 Route::get('/coinsell', [App\Http\Controllers\VisitorsController::class, 'coinsell'])->name('coinsell');
+
 Route::post('/visitorssubscribe', [App\Http\Controllers\VisitorsController::class, 'visitorssubscribe'])->name('visitorssubscribe');
+
+Route::get('/contact', [App\Http\Controllers\VisitorsController::class, 'contact'])->name('contact');
+Route::post('/contactcreate', [App\Http\Controllers\VisitorsController::class, 'contactcreate'])->name('contactcreate');
+
+
+
 
 
 
@@ -131,3 +138,6 @@ Route::get('/gallerysprites', [App\Http\Controllers\Nanoadmins::class, 'gallerys
 Route::get('/galleryspritesapprove/{id}', [App\Http\Controllers\Nanoadmins::class, 'galleryspritesapprove'])->name('galleryspritesapprove');
 Route::get('/galleryspritesdelete/{id}', [App\Http\Controllers\Nanoadmins::class, 'galleryspritesdelete'])->name('galleryspritesdelete');
 
+
+//dashboard
+Route::get('/dashboardindex', [App\Http\Controllers\Userdashb::class, 'dashboardindex'])->name('dashboardindex');

@@ -253,6 +253,7 @@
 
 
     <div class="boxes">
+        <a href="{{route('course',$course->id)}}" target="_blank" rel="noopener noreferrer">
         <img
           src="{{asset('storage/course/'.$course->courseimage)}}"
           alt="{{$course->course}} Image"
@@ -265,7 +266,10 @@
         <p>
          {{$course->description}}
         </p>
+    </a>
       </div>
+
+
 
     @endforeach
 

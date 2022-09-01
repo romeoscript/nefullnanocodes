@@ -43,68 +43,6 @@ background: url({{asset('assets/images/World_map.png')}});
 
 
       <footer>
-        <section class="choose">
-          <h2>Why Choose Us?</h2>
-          <div class="chose">
-            <div>
-              <img src="{{asset('assets/images/Vector (3).png')}}" alt="" />
-
-              <h3>CREATIVE</h3>
-            </div>
-            <div>
-              <img src="{{asset('assets/images/Vector (2).png')}}" alt="" />
-              <h3>SWIFT</h3>
-            </div>
-            <div>
-              <img src="{{asset('assets/images/Group.png')}}" alt="" />
-              <h3>PROFICIENT</h3>
-            </div>
-          </div>
-        </section>
-        <section class="client">
-          <h2>Our Clients</h2>
-          <div class="clients">
-            <div>
-              <p>
-                <a href="#"><img src="{{asset('svg/Rectangle 45.svg')}}" alt="" /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"><img src="{{asset('svg/Rectangle 44.svg')}}" alt="" /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"><img src="{{asset('svg/Rectangle 43.svg')}}" alt="" /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"><img src="{{asset('svg/Rectangle 42.svg')}}" alt="" /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"><img src="{{asset('svg/phone icon 1.svg')}}" alt="" /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"
-                  ><img src="{{asset('svg/5ead53e91c42dd0004bbf8c8 1.svg')}}" alt=""
-                /></a>
-              </p>
-            </div>
-            <div>
-              <p>
-                <a href="#"
-                  ><img src="{{asset('svg/59b5bc2a6dbe923c39853e02 1.svg')}}" alt=""
-                /></a>
-              </p>
-            </div>
-          </div>
-        </section>
         <section class="contact">
           <div class="contactdiv">
             <div>
