@@ -28,7 +28,7 @@
 
           <div class="box-model">
             <div class="icon">
-              <img src="./assets/images/Customer care 2.svg" alt="" />
+              <img src="./assets/images/Customer care 2.png" alt="" />
             </div>
             <div class="call-icon ico border">
               <form action="">
