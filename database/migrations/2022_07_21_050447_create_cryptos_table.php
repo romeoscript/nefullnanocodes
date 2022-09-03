@@ -16,17 +16,17 @@ return new class extends Migration
         Schema::create('cryptos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('bankacno');
-            $table->text('accname');
-            $table->text('bank');
-            $table->text('coinamount');
-            $table->text('coin');
-            $table->text('dollarrate');
-            $table->text('coin2dollar');
-            $table->text('phone');
-            $table->text('email');
-            $table->text('amountinnaira');
-            $table->text('paid')->default(0);
+            $table->text('bankacno' ,400);
+            $table->text('accname' ,400);
+            $table->text('bank' ,400);
+            $table->text('coinamount' ,400);
+            $table->text('coin' ,400);
+            $table->text('dollarrate' ,400);
+            $table->text('coin2dollar' ,400);
+            $table->text('phone' ,400);
+            $table->text('email' ,400);
+            $table->text('amountinnaira' ,400);
+            $table->text('paid' ,400)->default(0);
         });
     }
 

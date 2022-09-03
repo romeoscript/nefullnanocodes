@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('paidcourses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('studentname');
-            $table->text('studentid');
-            $table->text('courseid');
-            $table->text('amountpaid');
-            $table->text('balanceremaining')->nullable();
-            $table->text('stage')->nullable();
-            $table->text('finished')->default(0);
-            $table->text('expired')->default(0);
+            $table->text('studentname',400);
+            $table->text('studentid' ,400);
+            $table->text('courseid' ,400);
+            $table->text('amountpaid' ,400);
+            $table->text('balanceremaining',400)->nullable();
+            $table->text('stage' ,400)->nullable();
+            $table->text('finished' ,400)->default(0);
+            $table->text('expired' ,400)->default(0);
         });
     }
 

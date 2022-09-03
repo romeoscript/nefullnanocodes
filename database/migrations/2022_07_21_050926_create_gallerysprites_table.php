@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('gallerysprites', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('pic');
-            $table->string('pictitle');
+            $table->string('pic' ,400);
+            $table->string('pictitle' ,400);
             $table->text('description');
-            $table->string('skill');
-            $table->string('approved')->default(0);
-            $table->integer("studentid")->nullable();
+            $table->string('skill' ,400);
+            $table->string('approved' ,400)->default(0);
+            $table->integer("studentid" ,400)->nullable();
         });
     }
 

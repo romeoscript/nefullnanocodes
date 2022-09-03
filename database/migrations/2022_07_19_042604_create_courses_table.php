@@ -16,15 +16,15 @@ return new class extends Migration
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('course');
-            $table->text('description');
-            $table->text('price');
-            $table->text('prerequisite')->nullable();
-            $table->text('tutor');
-            $table->text('maxduation');
-            $table->text('courseouline');
-            $table->text('timetable');
-            $table->text('courseimage');
+            $table->text('course' ,200);
+            $table->string('description');
+            $table->text('price' ,200);
+            $table->text('prerequisite' ,200)->nullable();
+            $table->text('tutor' ,200);
+            $table->text('maxduation' ,200);
+            $table->text('courseouline' ,200);
+            $table->text('timetable' ,200);
+            $table->text('courseimage' ,400);
         });
     }
 
