@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('userid' ,200)->nullable();
             $table->string('pic' ,200)->nullable();
             $table->string('github' ,200)->nullable();
-            $table->testringxt('state' ,200)->nullable();
+            $table->string('state' ,200)->nullable();
             $table->string('lga' ,200)->nullable();
             $table->string('ig' ,200)->nullable();
         });
