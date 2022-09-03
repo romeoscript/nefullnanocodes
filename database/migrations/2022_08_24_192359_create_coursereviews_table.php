@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('coursereviews', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('name' ,400);
+            $table->text('name' ,200);
             $table->text('review');
             $table->text('pic');
             $table->text('star');

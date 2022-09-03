@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('enquiries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name' ,400);
-            $table->string('email' ,400);
-            $table->string('phone' ,400);
-            $table->string('title' ,400);
+            $table->string('name' ,200);
+            $table->string('email' ,200);
+            $table->string('phone' ,200);
+            $table->string('title' ,200);
             $table->text('message' );
-            $table->string('responded' ,400)->default(0);
-            $table->string('enquiry',400)->default(1);
-            $table->string('responsemessage' ,400)->nullable;
+            $table->string('responded' ,200)->default(0);
+            $table->string('enquiry',200)->default(1);
+            $table->string('responsemessage' ,200)->nullable;
         });
     }
 

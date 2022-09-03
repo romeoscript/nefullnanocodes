@@ -16,14 +16,14 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('name',200)->unique();
-            $table->text('sex' ,200);
-            $table->text('state',200);
-            $table->text('lga' ,200);
-            $table->text('address' ,200);
-            $table->text('email' ,200)->unique();
-            $table->text('phone' ,200);
-            $table->text('studentpassport' ,200)->nullable();
+            $table->string('name',200)->unique();
+            $table->string('sex' ,200);
+            $table->string('state',200);
+            $table->string('lga' ,200);
+            $table->string('address' ,200);
+            $table->string('email' ,200)->unique();
+            $table->string('phone' ,200);
+            $table->string('studentpassport' ,200)->nullable();
 
         });
     }

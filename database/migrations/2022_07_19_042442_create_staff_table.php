@@ -16,20 +16,20 @@ return new class extends Migration
         Schema::create('staff', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->text('name' ,200);
-            $table->text('email' ,200);
-            $table->text('phone' ,200)->nullable();
-            $table->text('skill' ,200)->nullable();
-            $table->string('description')->nullable();
-            $table->text('instagram' ,200)->nullable();
-            $table->text('twitter' ,200)->nullable();
-            $table->text('facebook' ,200)->nullable();
-            $table->text('userid' ,200)->nullable();
-            $table->text('pic' ,200)->nullable();
-            $table->text('github' ,200)->nullable();
-            $table->text('state' ,200)->nullable();
-            $table->text('lga' ,200)->nullable();
-            $table->text('ig' ,200)->nullable();
+            $table->string('name' ,200);
+            $table->string('email' ,200);
+            $table->string('phone' ,200)->nullable();
+            $table->string('skill' ,200)->nullable();
+            $table->text('description')->nullable();
+            $table->string('instagram' ,200)->nullable();
+            $table->string('twitter' ,200)->nullable();
+            $table->string('facebook' ,200)->nullable();
+            $table->string('userid' ,200)->nullable();
+            $table->string('pic' ,200)->nullable();
+            $table->string('github' ,200)->nullable();
+            $table->testringxt('state' ,200)->nullable();
+            $table->string('lga' ,200)->nullable();
+            $table->string('ig' ,200)->nullable();
         });
     }
 
