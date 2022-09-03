@@ -141,3 +141,7 @@ Route::get('/galleryspritesdelete/{id}', [App\Http\Controllers\Nanoadmins::class
 
 //dashboard
 Route::get('/dashboardindex', [App\Http\Controllers\Userdashb::class, 'dashboardindex'])->name('dashboardindex');
+
+Route::post('/studentstory', [App\Http\Controllers\Userdashb::class, 'studentstory'])->name('studentstory');
+
+Route::post('/studentreview', [App\Http\Controllers\Userdashb::class, 'studentreview'])->name('studentreview');

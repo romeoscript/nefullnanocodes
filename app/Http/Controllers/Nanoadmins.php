@@ -24,15 +24,20 @@ use Webkul\Product\Helpers\Review;
 class Nanoadmins extends Controller
 {
     //
+    // public function __construct()
+    // {
+    //     if (Auth::check()) {
+    //         // The user is logged in...
+    //         die('logged in');
+    //     }
+    //     else{
+    //         die('not logged in');
+    //     }
+    // }
+
     public function __construct()
     {
-        // if (Auth::check()) {
-        //     // The user is logged in...
-        //     die('logged in');
-        // }
-        // else{
-        //     die('not logged in');
-        // }
+        $this->middleware('Isstaff');
     }
 
 

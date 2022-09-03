@@ -17,7 +17,7 @@
 
     <main class="gallery__grid-imgholder">
         <div class="gallery__grid_img">
-            <img src="./assets/images/Rectangle 93.png" alt="">
+            <img src="{{asset('storage/gallery/'.$gallery->pic)}}" alt="">
 
             <div class="gallery__info">
                 <h3>{{$gallery->pictitle}}</h3>
