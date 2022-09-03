@@ -28,7 +28,7 @@
             <section class="section">
                 <div class="text">
                     <p>
-                        Welcome <span>Chinedu!</span> <br />You are doing a good job
+                        Welcome <span>{{Auth::user()->name}}!</span> <br />You are doing a good job
                         <br />Keep Going!
                     </p>
                 </div>
@@ -44,10 +44,26 @@
                     </div>
                     <div class="container">
                         <aside>
-                            <h5 style="--col: #a6a6a6">Java</h5>
-                            <h5 style="--col: #ffbf00">UI/UX</h5>
-                            <h5 style="--col: #5a9ad7">HTML</h5>
-                            <h5 style="--col: #ef7e32">CSS</h5>
+                            @if ($studentcourse != null)
+                        @foreach ($studentcourse as $pc )
+                        @if ($allcourses != null)
+                        @foreach ($allcourses as $c)
+                        @if ($pc->courseid == $c->id)
+                        <h5 style="--col: #a6a6a6">{{$c->course}}</h5>
+
+                        @endif
+
+                        @endforeach
+
+                        @endif
+
+                        @endforeach
+
+                        @endif
+                        {{-- <h5 style="--col: #ffbf00">UI/UX</h5>
+                        <h5 style="--col: #5a9ad7">HTML</h5>
+                        <h5 style="--col: #ef7e32">CSS</h5> --}}
+
                         </aside>
                     </div>
                 </div>
@@ -55,14 +71,31 @@
                     <h3>Progress</h3>
                     <div>
                         <section>
+                            @if ($studentcourse != null)
+                            @foreach ($studentcourse as $pc )
+                            @if ($allcourses != null)
+                            @foreach ($allcourses as $c)
+                            @if ($pc->courseid == $c->id)
+
                             <div class="container">
                                 <div>
-                                    <h4>Java</h4>
-                                    <h4>73%</h4>
+                                    <h4>{{$c->course}}</h4>
+                                    <h4>13%</h4>
                                 </div>
-                                <progress value="73" max="100"></progress>
+                                <progress value="13" max="100"></progress>
                             </div>
-                            <div class="container">
+
+                            @endif
+
+                            @endforeach
+
+                            @endif
+
+                            @endforeach
+
+                            @endif
+
+                            {{-- <div class="container">
                                 <div>
                                     <h4>UI/UX</h4>
                                     <h4>52%</h4>
@@ -82,7 +115,7 @@
                                     <h4>27%</h4>
                                 </div>
                                 <progress value="27" max="100"></progress>
-                            </div>
+                            </div> --}}
                         </section>
                     </div>
                 </div>
