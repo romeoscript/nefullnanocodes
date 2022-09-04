@@ -75,7 +75,7 @@ class Userdashb extends Controller
 
         $addgallery->description = $description;
         $addgallery->pictitle = $pictitle;
-        $addgallery->skill = $?;
+        $addgallery->skill = $skill;
         $addgallery->pic = $fileName;
         $addgallery->studentid = $user->id;
 
@@ -105,7 +105,7 @@ class Userdashb extends Controller
         $user = Students::where('email', Auth::user()->email)->first();
         if ($user == null) {
             # code...
-            Alert::error("Account validation failed", "Please croscheck your registered emails!")
+            Alert::error("Account validation failed", "Please croscheck your registered emails!");
             return back();
         }
 

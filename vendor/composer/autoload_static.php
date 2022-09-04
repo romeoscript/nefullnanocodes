@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
+class ComposerStaticInit231ee155d684987acbfcc743e9dbfe99
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -819,8 +819,8 @@ class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
         ),
         'Intervention\\Image\\' => 
         array (
-            0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
-            1 => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image',
+            0 => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image',
+            1 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -954,8 +954,8 @@ class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
         ),
         'Codeception\\' => 
         array (
-            0 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
-            1 => __DIR__ . '/..' . '/codeception/stub/src',
+            0 => __DIR__ . '/..' . '/codeception/stub/src',
+            1 => __DIR__ . '/..' . '/codeception/codeception/src/Codeception',
         ),
         'Carbon\\' => 
         array (
@@ -2401,9 +2401,6 @@ class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
         'Faker\\Extension\\BloodExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/BloodExtension.php',
         'Faker\\Extension\\ColorExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ColorExtension.php',
         'Faker\\Extension\\CompanyExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/CompanyExtension.php',
-        'Faker\\Extension\\Container' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Container.php',
-        'Faker\\Extension\\ContainerBuilder' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ContainerBuilder.php',
-        'Faker\\Extension\\ContainerException' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/ContainerException.php',
         'Faker\\Extension\\CountryExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/CountryExtension.php',
         'Faker\\Extension\\DateTimeExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/DateTimeExtension.php',
         'Faker\\Extension\\Extension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Extension.php',
@@ -2412,7 +2409,6 @@ class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
         'Faker\\Extension\\GeneratorAwareExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/GeneratorAwareExtension.php',
         'Faker\\Extension\\GeneratorAwareExtensionTrait' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/GeneratorAwareExtensionTrait.php',
         'Faker\\Extension\\Helper' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/Helper.php',
-        'Faker\\Extension\\NotInContainerException' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/NotInContainerException.php',
         'Faker\\Extension\\NumberExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/NumberExtension.php',
         'Faker\\Extension\\PersonExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/PersonExtension.php',
         'Faker\\Extension\\PhoneNumberExtension' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Extension/PhoneNumberExtension.php',
@@ -10026,10 +10022,10 @@ class ComposerStaticInit17c1a845eadec0aecf106229b519edfb
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit17c1a845eadec0aecf106229b519edfb::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit17c1a845eadec0aecf106229b519edfb::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit17c1a845eadec0aecf106229b519edfb::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit17c1a845eadec0aecf106229b519edfb::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit231ee155d684987acbfcc743e9dbfe99::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit231ee155d684987acbfcc743e9dbfe99::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit231ee155d684987acbfcc743e9dbfe99::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit231ee155d684987acbfcc743e9dbfe99::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -3,7 +3,7 @@
         'name' => 'bagisto/bagisto',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8e36c2db19974889d4a7ee2d0f23740602102539',
+        'reference' => '2dff25104cff136802527b31773d771033c01b6f',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'bagisto/bagisto' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8e36c2db19974889d4a7ee2d0f23740602102539',
+            'reference' => '2dff25104cff136802527b31773d771033c01b6f',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1103,9 +1103,9 @@
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
-            'pretty_version' => 'v4.14.0',
-            'version' => '4.14.0.0',
-            'reference' => '34bea19b6e03d8153165d8f30bba4c3be86184c1',
+            'pretty_version' => 'v4.15.0',
+            'version' => '4.15.0.0',
+            'reference' => '617d0220b903895537b25791f52af4698dd19339',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
@@ -1405,8 +1405,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0 || 2.0.0 || 3.0.0',
-                1 => '1.0|2.0|3.0',
+                0 => '1.0|2.0|3.0',
+                1 => '1.0.0 || 2.0.0 || 3.0.0',
             ),
         ),
         'psr/simple-cache' => array(

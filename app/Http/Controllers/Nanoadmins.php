@@ -17,6 +17,7 @@ use App\Whatyouwilllearn;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Ourservice;
 
+
 use function Ramsey\Uuid\v1;
 use Illuminate\Support\Facades\Auth;
 use Webkul\Product\Helpers\Review;
@@ -35,10 +36,10 @@ class Nanoadmins extends Controller
     //     }
     // }
 
-    public function __construct()
-    {
-        $this->middleware('Isstaff');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('Isstaff');
+    // }
 
 
 
